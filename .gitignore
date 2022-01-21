@@ -2,4 +2,4 @@
 venv/
 .env
 sendemails/.env.yaml
-.passwords
+password/
