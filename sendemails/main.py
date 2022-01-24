@@ -16,7 +16,7 @@ def get_bearer_token(request):
         abort(401)
     elif len(parts) > 2:
         abort(401)
-    else: bearer_token=parts[1]
+    else: bearer_token= parts[1]
 
     return bearer_token
 
