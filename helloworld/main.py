@@ -2,7 +2,18 @@
 First Google Cloud function Hello World
 '''
 def hello_world(request):
-    #print(request)
+    if request.method == 'OPTIONS':
+        headers = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Max-Age': '3600'
+        }
+        return '', 204, headers
+
+    headers = {
+        'Access-Control-Allow-Origin': '*'
+    }
     request_args = request.args
     request_json = request.get_json(silent=True)
     if request_args and 'name' in request_args:
@@ -19,4 +30,4 @@ def hello_world(request):
         name='World'
         lastName='Nothing'
 
-    return f'Hey {name} {lastName}'
+    return f'Hey {name} {lastName}', 200, headers

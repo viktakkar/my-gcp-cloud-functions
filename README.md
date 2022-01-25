@@ -15,7 +15,7 @@ python3 -m venv venv
 To activate the virtual environment:
 ```
 source venv/bin/activate
-```
+```git 
 Then, we can add dependencies (packages) by putting them
 in a `requirements.txt` file and we then install them with:
 ```
